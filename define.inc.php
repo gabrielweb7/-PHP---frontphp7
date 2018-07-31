@@ -1,15 +1,44 @@
 <?php
+	/**
+	*	Arquivo de configurações e definições / variáveis do sistema
+	*	@author Gabriel Azuaga Barbosa
+	* 	@version 1.0.0
+	*/
 
-	/* Iniciando sessão */
-	if(empty(session_id())) { session_start(); } 
+	/**
+	*	Mostrar erros do sistema 
+	*/
+	ini_set('display_errors', 1);
+	ini_set('display_startup_errors', 1);
+	error_reporting(E_ALL);
+
+	/** 
+	*	Limite de uploads 
+	*/
+	ini_set('upload_max_filesize', '25M');
+	ini_set('post_max_size', '25M');
+	ini_set('max_input_time', 300);
+	ini_set('max_execution_time', 300);
+
+	/**
+	*	Sessão está vazia ? 
+	*/
+	if(empty(session_id())) { 
+		/* Inicia Sessão*/
+		session_start(); } 
+	else  { 
+		/* Gerando nova sessão para diminuir probabilidade de sequestro de sessão! */
+		session_regenerate_id(); 
+	}
 
 	/* Inicia Composer's autoloader */
 	require 'vendor/autoload.php';
 	
 
 	/* Configuração do TimeZone */
-	date_default_timezone_set('America/Manaus');
+	//date_default_timezone_set('America/Manaus');
 	
+
 	/**
 	*	Defines: Variaveis do sistema 
 	*/
