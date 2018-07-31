@@ -36,6 +36,39 @@
 
 	/* Retorno: 31/07/2018 */
 
+	echo "<br /><br />";
+
+
+	$dataTimeMysql = "2018-07-31 11:17:23";
+	$dataMysql = "2018-07-31";
+
+	echo tools::convertDateTimeMysqlToBr($dataTimeMysql);
+
+	/* Retorno: 31/07/2018 11:17 */
+
+	echo "<br />";
+
+	echo tools::convertDateMysqlToBr($dataMysql);
+
+	/* Retorno: 31/07/2018 */
+
+	echo "<br /><br />";
+
+
+	$dateTimeBr = "31/07/2018 11:17:23";
+	$dateBr = "31/07/2018";
+
+
+	echo tools::convertDateTimeBrToMysql($dateTimeBr);
+
+	/* Retorno: 2018-07-31 11:17:23 */
+
+	echo "<br />";
+
+	echo tools::convertDateBrtoMysql($dateBr);
+
+	/* Retorno: 2018-07-31 */
+
 	echo "<br />";
 
 ?>
