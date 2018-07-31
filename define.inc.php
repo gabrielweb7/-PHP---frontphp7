@@ -2,7 +2,7 @@
 	/**
 	*	Arquivo de configurações e definições / variáveis do sistema
 	*	@author Gabriel Azuaga Barbosa
-	* 	@version 1.0.0
+	* 	@version 1.1.0
 	*/
 
 	/**
@@ -24,21 +24,27 @@
 	*	Sessão está vazia ? 
 	*/
 	if(empty(session_id())) { 
-		/* Inicia Sessão*/
+		/** 
+		*	Inicia Sessão
+		*/
 		session_start(); } 
 	else  { 
-		/* Gerando nova sessão para diminuir probabilidade de sequestro de sessão! */
+		/** 
+		*	Gerando nova sessão para diminuir probabilidade de sequestro de sessão! 
+		*/
 		session_regenerate_id(); 
 	}
 
-	/* Inicia Composer's autoloader */
+	/** 
+	*	Inicia Composer's autoloader 
+	*/
 	require 'vendor/autoload.php';
 	
-
-	/* Configuração do TimeZone */
-	//date_default_timezone_set('America/Manaus');
+	/** 
+	*	Configuração padrão do TimeZone 
+	*/
+	date_default_timezone_set('America/Campo_Grande');
 	
-
 	/**
 	*	Defines: Variaveis do sistema 
 	*/
@@ -50,7 +56,9 @@
 	define("REQUEST_URI", $_SERVER["REQUEST_URI"]);
 	define("SCRIPT_NAME", $_SERVER["SCRIPT_NAME"]);
 
-	/* Configurações de conexão com o banco de dados */
+	/** 
+	*	Configurações de conexão com o banco de dados 
+	*/
 	if(SERVER_NAME == "localhost" or SERVER_NAME == "127.0.0.1") {
 		define("DATABASE_DB","novosite_aje_ms_2018");
 		define("DATABASE_HOST","localhost");
