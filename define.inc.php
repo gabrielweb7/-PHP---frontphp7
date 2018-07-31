@@ -60,19 +60,19 @@
 	*	Configurações de conexão com o banco de dados 
 	*/
 	if(SERVER_NAME == "localhost" or SERVER_NAME == "127.0.0.1") {
-		define("DATABASE_DB","novosite_aje_ms_2018");
+		define("DATABASE_DB","db");
 		define("DATABASE_HOST","localhost");
 		define("DATABASE_USER","root");
 		define("DATABASE_PASS","");
 		/* RAIZ DO SITE */
-		define('RAIZ_DIR','http://localhost/@_MEUS_CLIENTES_@/Empreender%20Grupo%20Criativo/AJE%20MS/NovoWebsite2018/WWW_FTP/');
+		define('RAIZ_DIR','http://localhost/@_MEUS_CLIENTES_@/');
 	} else {
-		define("DATABASE_DB","ajems_banco");
+		define("DATABASE_DB","db");
 		define("DATABASE_HOST","localhost");
-		define("DATABASE_USER","ajems_user");
-		define("DATABASE_PASS","M7d-HcrY_5jUS+V-Vhsb");
+		define("DATABASE_USER","user");
+		define("DATABASE_PASS","pass");
 		/* RAIZ DO SITE */
-		define('RAIZ_DIR','http://ajems.com.br/novo/');
+		define('RAIZ_DIR','http://site.com.br/novo/');
 	}
 
 	/**
