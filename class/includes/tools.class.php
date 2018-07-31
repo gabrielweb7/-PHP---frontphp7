@@ -2,11 +2,40 @@
 	/**
 	*	Biblioteca com utilidades diversas para o PHP
 	*	@author Gabriel Azuaga Barbosa
-	* 	@version 1.1.9
+	* 	@version 1.2.1
 	*/
 	class tools {
 
-		/* Função para retornar IP do visitante */
+		/** 
+		*	Redirecionar 
+		*/
+		public static function redirecionar($valor) {
+			if(isset($valor)) {
+			    header("Location: {$valor}");
+			}
+		}
+
+		/** 
+		*	Formatar Bytes para escrita mais legivel 
+		*/
+	    public static function formatBytes($size, $precision = 0){
+	        $unit = ['Byte','KB','MB','GB','TB','PB','EB','ZB','YB'];
+	        for($i = 0; $size >= 1024 && $i < count($unit)-1; $i++){
+	            $size /= 1024;
+	        }
+	        return round($size, $precision).' '.$unit[$i];
+	    }
+
+		/** 
+		*	Remover break lines de uma string 
+		*/
+	    public static function removerBreakLinesFromString($string) {
+	        return  preg_replace( "/\r|\n/", "", $string );
+	    }
+
+		/** 
+		*	Função para retornar IP do visitante 
+		*/
 		public static function getRealIp()
 		{
 			if ( !empty( $_SERVER['HTTP_CLIENT_IP'] ) )
