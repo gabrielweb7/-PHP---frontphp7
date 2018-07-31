@@ -1,7 +1,11 @@
 <?php
 	
+
+
 	require_once("../init.php");
 
+	//use PHPMailer\PHPMailer\PHPMailer;
+	//use PHPMailer\PHPMailer\Exception;
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -12,8 +16,11 @@
 	</head>
 	<body>
 
-		<?php ?>
+		<?php
 
+			
+
+		?>
 
 	</body>
 </html>

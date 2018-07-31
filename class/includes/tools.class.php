@@ -1,8 +1,29 @@
 <?php
+	/**
+	*	Biblioteca com utilidades diversas para o PHP
+	*	@author Gabriel Azuaga Barbosa
+	* 	@version 1.0.0
+	*/
 	class tools {
 
-		public static function jsRedirecionar($url) { 
-			echo "<script>document.location.href='{$url}';</script>";
+		/**
+		*	Função criada para setar codificação da página
+		*/
+		public static setContentType($tipo) {
+			if($tipo == "utf8") { 
+				header ('Content-type: text/html; charset=UTF-8');
+			} else if($tipo == "iso") { 
+				header ('Content-type: text/html; charset=ISO-8859-1');
+			}
+		}
+
+		/**
+		*	Função criada para setar timeZone do Sistema
+		*/
+		public static setTimeZone($data = false) {
+			if($data) { 
+				date_default_timezone_set($data);
+			} 
 		}
 
 		public static function checkEmailValido($email) { 
