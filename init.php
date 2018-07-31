@@ -22,7 +22,10 @@
 	
 	/* Includes */
 	getInclude("tools.class.php");
+	getInclude("upload.class.php");
 	getInclude("youtube.class.php");
+
+
 
 	
 
