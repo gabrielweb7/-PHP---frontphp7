@@ -51,7 +51,8 @@
 	define("CLASS_DIR","class/");
 	define("CLASS_INC_DIR", CLASS_DIR."includes/");
 	define("CLASS_CON_DIR", CLASS_DIR."connect/");
-
+	define("MODULO_DIR","modulos/");
+	
 	define("SERVER_NAME", $_SERVER["SERVER_NAME"]);
 	define("REQUEST_URI", $_SERVER["REQUEST_URI"]);
 	define("SCRIPT_NAME", $_SERVER["SCRIPT_NAME"]);
@@ -81,7 +82,14 @@
 	function getInclude($fileDir = false) {
 		if($fileDir) { require_once CLASS_INC_DIR.$fileDir; }
 	}	
-
+	
+	/**
+	*	Função estrutura para carregar modulo personalizado 
+	*/
+	function getModulo($fileDir = false) {
+		if($fileDir) { require_once MODULO_DIR.$fileDir; }
+	}
+	
 	/**
 	*	Função estrutura para carregar classe / connect 
 	*/

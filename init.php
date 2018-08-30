@@ -25,13 +25,7 @@
 	getInclude("upload.class.php");
 	getInclude("youtube.class.php");
 
-
-	
-
-
-
-	
-
-
+	/* Modulos Personalizados */
+	/* getModulo("nomedomodulo.php"); */
 	
 ?>
