@@ -1,0 +1,35 @@
+<IfModule mod_rewrite.c>
+
+	AcceptPathInfo On
+
+	RewriteEngine On
+
+	RewriteBase "/@_PROJETOS GITHUB_@/@_My Frameworks_@/EnginePHP7/demo-pages/url-amigavel/"
+
+
+	#--------------------
+	# Criando Rotas	
+	#--------------------
+
+	RewriteRule ^(.*)index\.(php|html?)$ ./ [R=301,NC,L]
+	
+	RewriteRule ^projetos/?$ projetos.php [NC]
+	RewriteRule ^projetos/([a-z0-9-]+)/?$ projetos.php?id=$1 [NC]
+	RewriteRule ^projetos/([a-z]+)/([0-9]+)/?$ projetos.php?acao=$1&value=$2 [NC]
+
+	RewriteRule ^produtos/?$ produtos.php [NC]
+	RewriteRule ^produtos/([a-z0-9-]+)/([a-z0-9-]+)/?$ produtos.php?acao=$2&value=$1 [NC]
+
+	RewriteRule ^contato/?$ contato.php [NC]
+
+
+	#--------------------
+	# Tratamento de erros	
+	#--------------------
+
+	RewriteRule ^404/?$ 404.php [NC,L]
+	
+	ErrorDocument 404 /@_PROJETOS%20GITHUB_@/@_My%20Frameworks_@/EnginePHP7/demo-pages/url-amigavel/404
+
+	
+</IfModule>

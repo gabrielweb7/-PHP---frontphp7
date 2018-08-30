@@ -204,6 +204,28 @@
 			}
 			return $novo_texto; 
 		}
+		
+		/*
+		*    Função criada para transformar em url amigavel
+		*/
+		public static function convertToUrlAmigavel($stringx) {
+
+            /* remover todos caracteres */
+            $tituloAmigavel = iconv( "UTF-8" , "ASCII//TRANSLIT//IGNORE" , $stringx );
+            /* remove espaços duplos ou mais.. e deixa com um espaço */
+            $tituloAmigavel = preg_replace('/( )+/', ' ', $tituloAmigavel );
+            /* transforma espaço em '-' */
+            $tituloAmigavel = str_replace(' ', '-', $tituloAmigavel );
+            /* deixa passar somente lestra e numeros */
+            $tituloAmigavel = preg_replace('/[^A-Za-z0-9-]/', '', $tituloAmigavel );
+            /* Caso tenha mais que um '-' .. deixar apenas um .. */
+            $tituloAmigavel = preg_replace('/[-]+/', '-', $tituloAmigavel );
+            /* deixa tudo minusculo */
+            $tituloAmigavel = strtolower($tituloAmigavel);
+
+            return $tituloAmigavel;
+
+        }
 
 	}
 ?>
